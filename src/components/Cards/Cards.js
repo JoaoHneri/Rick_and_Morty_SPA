@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 
 function Cards({results}) {
@@ -11,8 +11,9 @@ function Cards({results}) {
             <div className=''>
               <img src={image} alt='' className='img-fluid'/> 
               <div className='cardy-body'>
-                <div className='fs-4 fw-bold mb-4'>{name}</div>
-                <div className='mb-5'>
+                <div className='fs-4 fw-bold'>{name}</div>
+                <div className='fs-5 mb-4'>{species}</div>
+                <div className='mb-5'>                    
                     <div className='fs-6'>Última localização:</div>
                     <div className='fs-5'>{location.name}</div>
                     <div className='position-absolute badge bg-danger mb-5'>{status}</div>
