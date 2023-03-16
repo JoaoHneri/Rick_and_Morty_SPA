@@ -29,9 +29,7 @@ function App() {
           <div className="col-3"><Social/></div>
           <div className="col-8">
             <div className="row">
-            <Cards/>
-            <Cards/>
-            <Cards/>
+            <Cards results={results}/>
             </div>
           </div>
         </div>
