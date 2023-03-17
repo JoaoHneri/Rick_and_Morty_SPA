@@ -4,6 +4,7 @@ import Cards from "./components/Cards/Cards";
 import Social from "./components/Social/Social";
 import { useEffect, useState } from "react";
 import Pagination from "./components/Pagination/Pagination";
+import Search from "./components/Search/Search";
 
 function App() {
 
@@ -23,8 +24,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="text-center mb-4">Rick and Morty <span className="text-success">Wiki</span></h1>
-
+      <h1 className="text-center mb-4">Rick and Morty</h1>
+      <Search/>
       <div className="container">
         <div className="row">
           <div className="col-3"><Social/></div>
@@ -35,7 +36,7 @@ function App() {
           </div>
         </div>
       </div>
-      <Pagination setPage={setPage}/>
+      <Pagination Page={Page} setPage={setPage}/>
     </div>
 
   );

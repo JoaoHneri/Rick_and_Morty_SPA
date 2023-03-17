@@ -1,7 +1,8 @@
 import React from 'react'
 
-const Pagination = ({setPage}) => {
+const Pagination = ({Page, setPage}) => {
     let prev = () =>{
+        if(Page === 1)return
         setPage((x) => x - 1)
     }
 
