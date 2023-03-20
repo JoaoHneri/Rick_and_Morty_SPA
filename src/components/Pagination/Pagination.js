@@ -1,23 +1,21 @@
 import React from 'react'
+import ReactPaginate from 'react-paginate';
+import styles from './Pagination.module.css'
 
 
-const Pagination = ({Page, setPage}) => {
-
-    let prev = () =>{
-        if(Page === 1)return
-        setPage((x) => x - 1)
-        window.scrollTo(0, 0);
-    }
-
-    let next = () =>{
-        setPage((x) => x + 1)
-        window.scrollTo(0, 0);
-    }
-
-  return <div className='container d-flex justify-content-center gap-5 my-5'>
-    <button type='button' onClick={prev} className='btn btn-outline-success'>Anterior</button>
-    <button type='button' onClick={next} className='btn btn-outline-success'>Próximo</button>
-  </div>
+const Pagination = ({Page, setPage, info}) => {
+  return <ReactPaginate 
+  className={`${styles.pag} pagination justify-content-center gap-4 my-4`}
+  nextLabel="Próximo"
+  previousLabel="Anterior"
+  nextClassName='btn btn-success'
+  previousClassName='btn btn-success'
+  pageClassName='page-item'
+  pageLinkClassName='page-link'
+  onPageChange={(data)=>setPage(data.selected +1)}
+  activeClassName='active bg-success'
+  onClick={()=>{window.scrollTo(0, 0)}}
+  pageCount={info?.pages}/>
 }
 
 export default Pagination

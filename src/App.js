@@ -37,7 +37,7 @@ function App() {
           </div>
         </div>
       </div>
-      <Pagination Page={Page} setPage={setPage}/>
+      <Pagination info={info} Page={Page} setPage={setPage}/>
     </div>
 
   );
