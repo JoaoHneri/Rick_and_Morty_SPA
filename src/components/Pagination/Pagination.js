@@ -1,13 +1,17 @@
 import React from 'react'
 
+
 const Pagination = ({Page, setPage}) => {
+
     let prev = () =>{
         if(Page === 1)return
         setPage((x) => x - 1)
+        window.scrollTo(0, 0);
     }
 
     let next = () =>{
         setPage((x) => x + 1)
+        window.scrollTo(0, 0);
     }
 
   return <div className='container d-flex justify-content-center gap-5 my-5'>

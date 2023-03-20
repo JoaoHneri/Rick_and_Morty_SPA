@@ -10,9 +10,10 @@ function App() {
 
   let [Page, setPage] = useState(1);
   let [fetchData,setFetchData] = useState([]);
+  let [Person, setPerson] = useState("");
   let {info, results} = fetchData;
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${Page}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${Page}&name=${Person}`;
   
   useEffect(()=>{
       (async function(){
@@ -25,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="text-center mb-4">Rick and Morty</h1>
-      <Search/>
+      <Search setPage={setPage} setPerson={setPerson}/>
       <div className="container">
         <div className="row">
           <div className="col-3"><Social/></div>
