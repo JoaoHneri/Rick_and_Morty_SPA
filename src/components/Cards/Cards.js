@@ -1,7 +1,25 @@
 import React from 'react';
 import styles from './Cards.module.css';
+import { useState } from 'react';
+import {AiOutlineHeart, AiFillHeart} from 'react-icons/ai';
+import { getFavorites, setFavorites } from '../../services/LocalStorageFuncs';
 
 function Cards({results}) {
+
+  let [Favs, setFavs] = useState( getFavorites('barraFavs') || []);
+
+   const handleClick = (obj)=>{
+    const element = Favs.find(x => x.id === obj.id);
+    if(element){
+      const arrFilter = Favs.filter((x) => x.id !== obj.id)
+      setFavs(arrFilter);
+      setFavorites('barraFavs',arrFilter);
+    }else{
+      setFavs([...Favs,obj]);
+      setFavorites('barraFavs',[...Favs, obj]);
+    }
+   }
+
     let display;
     if(results){
         display = results.map(x =>{
@@ -42,7 +60,18 @@ function Cards({results}) {
                 </div>
               );
             }
-          })()}         
+          })()}  
+                </div>
+                <div>
+                <button onClick={() => handleClick(x)}>
+            {
+              Favs.some((intemFav)=> intemFav.id === x.id) ? (
+                <AiFillHeart/>
+              ) : (
+                <AiOutlineHeart />
+              )
+            }
+            </button>  
                 </div>
               </div>
             </div> 
