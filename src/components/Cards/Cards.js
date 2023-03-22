@@ -65,7 +65,7 @@ function Cards({results}) {
                 <div>
                 <button onClick={() => handleClick(x)}>
             {
-              Favs.some((intemFav)=> intemFav.id === x.id) ? (
+              Favs.some((itemFav)=> itemFav.id === x.id) ? (
                 <AiFillHeart/>
               ) : (
                 <AiOutlineHeart />

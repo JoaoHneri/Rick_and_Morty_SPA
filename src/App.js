@@ -1,6 +1,7 @@
 import Home from "./Routes/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Favs from "./components/Favs/Favs";
+import Favorites from "./Routes/Favorites";
+
 function App() {
 
 
@@ -8,7 +9,7 @@ function App() {
    <BrowserRouter>
    <Routes>
     <Route exact path="/" Component={Home}></Route>
-    <Route exact path="/favs" Component={Favs}></Route>
+    <Route exact path="/favorites" Component={Favorites}></Route> 
    </Routes>
    </BrowserRouter>
   );

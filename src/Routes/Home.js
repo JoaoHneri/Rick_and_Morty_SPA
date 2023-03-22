@@ -5,7 +5,7 @@ import Social from "../components/Social/Social";
 import { useEffect, useState } from "react";
 import Pagination from "../components/Pagination/Pagination";
 import Search from "../components/Search/Search";
-import { Link } from "react-router-dom";
+
 
 function Home() {
 
@@ -25,10 +25,8 @@ function Home() {
 
 
   return (
-    <switch>
     <div className="App">
       <h1 className="text-center mb-4">Rick and Morty</h1>
-      <Link to="/favs">Favs</Link>
       <Search setPage={setPage} setPerson={setPerson}/>
       <div className="container">
         <div className="row">
@@ -42,7 +40,6 @@ function Home() {
       </div>
       <Pagination info={info} Page={Page} setPage={setPage}/>
     </div>
-    </switch>
   );
 }
 
