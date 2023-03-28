@@ -63,7 +63,7 @@ function Cards({results}) {
           })()}  
                 </div>
                 <div>
-                <a className={`${styles.heart}`} onClick={() => handleClick(x)}>
+                <p className={`${styles.heart}`} onClick={() => handleClick(x)}>
             {
               Favs.some((itemFav)=> itemFav.id === x.id) ? (
                 <AiFillHeart/>
@@ -71,7 +71,7 @@ function Cards({results}) {
                 <AiOutlineHeart />
               )
             }
-            </a>  
+            </p>  
                 </div>
               </div>
             </div> 

@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import { getFavorites } from "../../services/LocalStorageFuncs";
+import { getFavorites, setFavorites } from "../../services/LocalStorageFuncs";
 import styles from "../Cards/Cards.module.css";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import {AiFillHeart } from "react-icons/ai";
 
 
 const Fav = () => {
   const [data, setData] = useState(getFavorites("barraFavs") || []);
+  const removeItem = (obj) => {
+    const arrFilter = data.filter((x) => x.id !== obj.id )
+    setData(arrFilter)
+    setFavorites('barraFavs', arrFilter)
 
+  }
 
   let display;
   if (data) {
@@ -47,13 +52,7 @@ const Fav = () => {
                 })()}
               </div>
               <div>
-                {/* <button onClick={() => handleClick(x)}>
-                  {Favs.some((itemFav) => itemFav.id === x.id) ? (
-                    <AiFillHeart />
-                  ) : (
-                    <AiOutlineHeart />
-                  )}
-                </button> */}
+                <p className={`${styles.heart}`} onClick={()=> removeItem(x)}><AiFillHeart/></p>
               </div>
             </div>
           </div>
