@@ -11,3 +11,16 @@
 .cardy_body{
     padding: 10px;
 }
+
+.heart:hover{
+    color: green;
+}
+
+.heart{
+    position: absolute;
+    top: 0px;
+    left: 245px;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(0, 250, 0);
+}

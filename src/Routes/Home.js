@@ -20,6 +20,7 @@ function Home() {
       (async function(){
         let data = await fetch(api).then((res) =>res.json());
         setFetchData(data);
+        console.log(data);
       })()
   },[api]);
 
