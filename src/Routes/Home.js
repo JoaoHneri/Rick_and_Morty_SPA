@@ -28,13 +28,14 @@ function Home() {
   return (
     <div className="App">
       <h1 className="text-center mb-4">Rick and Morty</h1>
+      <h2 className="text-center">Personagens</h2>
       <Search setPage={setPage} setPerson={setPerson}/>
       <div className="container">
         <div className="row">
           <div className="col-3"><Social/></div>
           <div className="col-8">
             <div className="row">
-            <Cards results={results}/>
+            <Cards page="/" results={results}/>
             </div>
           </div>
         </div>

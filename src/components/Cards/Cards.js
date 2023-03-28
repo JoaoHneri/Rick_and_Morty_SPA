@@ -3,8 +3,9 @@ import styles from './Cards.module.css';
 import { useState } from 'react';
 import {AiOutlineHeart, AiFillHeart} from 'react-icons/ai';
 import { getFavorites, setFavorites } from '../../services/LocalStorageFuncs';
+import { Link } from 'react-router-dom';
 
-function Cards({results}) {
+function Cards({results, page}) {
 
   let [Favs, setFavs] = useState( getFavorites('barraFavs') || []);
 
@@ -25,9 +26,13 @@ function Cards({results}) {
         display = results.map(x =>{
             let {id, name, image, species, location, status} = x;
             return(
-            <div key={id} className={'col-4 mb-4 position-relative'}>
+            <div
+            style={{textDecoration: "none"}}
+            key={id} className={'col-4 mb-4 position-relative text-dark'}>
             <div className={styles.cards}>
-              <img src={image} alt='' className={`${styles.img} img-fluid`}/> 
+            <Link to={`${page}${id}`}>
+              <img src={image} alt='' className={`${styles.img} img-fluid`}/>
+            </Link> 
               <div className={`${styles.cardy_body} Card-body`}>
                 <div className='fs-4 fw-bold'>{name}</div>
                 <div className='fs-5 mb-4'>{species}</div>
