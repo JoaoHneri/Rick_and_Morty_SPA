@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { getFavorites, setFavorites } from "../../services/LocalStorageFuncs";
 import styles from "../Cards/Cards.module.css";
 import {AiFillHeart } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 
-const Fav = () => {
+const Fav = ({page}) => {
   const [data, setData] = useState(getFavorites("barraFavs") || []);
   const removeItem = (obj) => {
     const arrFilter = data.filter((x) => x.id !== obj.id )
@@ -22,13 +23,15 @@ const Fav = () => {
         
         <div key={id} className={"col-4 mb-4 position-relative"}>
           <div className={styles.cards}>
-            <img src={image} alt="" className={`${styles.img} img-fluid`} />
+          <Link to={`${id}`}> 
+          <img src={image} alt="" className={`${styles.img} img-fluid`} />
+          </Link>
             <div className={`${styles.cardy_body} Card-body`}>
               <div className="fs-4 fw-bold">{name}</div>
               <div className="fs-5 mb-4">{species}</div>
               <div className="mb-4">
                 <div className="fs-6">Última localização:</div>
-                <div className="fs-5">{location.name}</div>
+                <div className="fs-5">{location?.name}</div>
                 {(() => {
                   if (status === "Dead") {
                     return (

@@ -22,7 +22,7 @@ const CardDetails = () => {
   return (
     
     <div className="container d-flex justify-content-center">
-      <div className="col-1"><Link to="/">Home</Link></div>
+      <div className=""><Link to="/">Home</Link></div>
       <div className="d-flex flex-column gap-3">
         <h1 className="text-center">{name}</h1>
         <img className="img-fluid" src={image} alt="personagem"></img>

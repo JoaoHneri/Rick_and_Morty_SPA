@@ -12,6 +12,7 @@ function App() {
    <Route exact path="/:id" Component={CardDetails}></Route> 
     <Route exact path="/" Component={Home}></Route>
     <Route exact path="/favorites" Component={Favorites}></Route> 
+    <Route exact path="/favorites/:id" Component={CardDetails}></Route> 
    </Routes>
    </BrowserRouter>
   );

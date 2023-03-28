@@ -1,6 +1,5 @@
 import React from 'react'
 import Fav from '../components/Favs/Favs'
-import Social from '../components/Social/Social'
 import { Link } from 'react-router-dom'
 
 function Favorites() {
