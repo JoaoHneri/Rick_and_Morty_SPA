@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+
 
 const CardDetails = () => {
   let { id } = useParams();
@@ -16,15 +16,14 @@ const CardDetails = () => {
     })();
   }, [api]);
 
-  let { name, gender, image, location, origin, species, status, type } =
+  let { name, gender, image, location, origin, species, status} =
     fetchData;
 
   return (
     
     <div className="container d-flex justify-content-center">
-      <div className=""><Link to="/">Home</Link></div>
-      <div className="d-flex flex-column gap-3">
-        <h1 className="text-center">{name}</h1>
+      <div className="d-flex flex-column gap-3 my-5">
+        
         <img className="img-fluid" src={image} alt="personagem"></img>
         {(() => {
           if (status === "Dead") {
@@ -36,6 +35,10 @@ const CardDetails = () => {
           }
         })()}
         <div className="Container">
+        <div className="">
+            <span className="fw-bold">Nome: </span>{name}
+          </div>
+        
           <div className="">
             <span className="fw-bold">Gênero:</span> {gender}
           </div>
@@ -47,9 +50,6 @@ const CardDetails = () => {
           </div>
           <div className="">
             <span className="fw-bold">Origem:</span> {origin?.name}
-          </div>
-          <div className="">
-            <span className="fw-bold">Tipo:</span> {type}
           </div>
         </div>
       </div>

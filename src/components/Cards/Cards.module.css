@@ -17,9 +17,9 @@
 }
 
 .heart{
-    position: absolute;
     top: 0px;
-    left: 245px;
+  right: 5px;
+  font-size: 17px;
     font-size: 30px;
     cursor: pointer;
     color: rgb(45, 176, 45);

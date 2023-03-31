@@ -1,16 +1,18 @@
 import React from 'react'
 import Fav from '../components/Favs/Favs'
-import { Link } from 'react-router-dom'
+import Navbar from '../components/Navbar/Navbar'
+import Social from '../components/Social/Social'
 
 function Favorites() {
   return (
     <div className="FavoritesContainer">
-        <h1 className="text-center mb-4">Favorites</h1>
+      <Navbar/>
+        <h1 className="text-center mb-4">Favoritos</h1>
     
     <div className="container">
         <div className="row">
-          <div className="col-3"><Link to="/">Home</Link></div>
-          <div className="col-8">
+        <div className="col-lg-3 col-12 mb-5"><Social/></div>
+          <div className="col-lg-8 col-12">
             <div className="row">
             <Fav/>
             </div>

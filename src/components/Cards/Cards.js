@@ -28,12 +28,12 @@ function Cards({results, page}) {
             return(
             <div
             style={{textDecoration: "none"}}
-            key={id} className={'col-4 mb-4 position-relative text-dark'}>
-            <div className={styles.cards}>
+            key={id} className={'col-lg-4 col-md-6 col-12 mb-4 position-relative text-dark'}>
+            <div className={`${styles.cards} d-flex flex-column justify-content-center`}>
             <Link to={`${page}${id}`}>
               <img src={image} alt='' className={`${styles.img} img-fluid`}/>
             </Link> 
-              <div className={`${styles.cardy_body} Card-body`}>
+              <div className={`${styles.cardy_body} `}>
                 <div className='fs-4 fw-bold'>{name}</div>
                 <div className='fs-5 mb-4'>{species}</div>
                 <div className='mb-4'>                    
@@ -68,7 +68,7 @@ function Cards({results, page}) {
           })()}  
                 </div>
                 <div>
-                <p className={`${styles.heart}`} onClick={() => handleClick(x)}>
+                <p className={`${styles.heart} position-absolute badge`} onClick={() => handleClick(x)}>
             {
               Favs.some((itemFav)=> itemFav.id === x.id) ? (
                 <AiFillHeart/>

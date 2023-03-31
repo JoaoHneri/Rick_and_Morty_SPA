@@ -5,9 +5,11 @@ import Social from "../components/Social/Social";
 import { useEffect, useState } from "react";
 import Pagination from "../components/Pagination/Pagination";
 import Search from "../components/Search/Search";
+import Navbar from "../components/Navbar/Navbar";
 
 
-function Home() {
+
+function App() {
 
   let [Page, setPage] = useState(1);
   let [fetchData,setFetchData] = useState([]);
@@ -27,13 +29,12 @@ function Home() {
 
   return (
     <div className="App">
-      <h1 className="text-center mb-4">Rick and Morty</h1>
-      <h2 className="text-center">Personagens</h2>
+      <Navbar/>
       <Search setPage={setPage} setPerson={setPerson}/>
       <div className="container">
         <div className="row">
-          <div className="col-3"><Social/></div>
-          <div className="col-8">
+          <div className="col-lg-3 col-12 mb-5"><Social/></div>
+          <div className="col-lg-8 col-12">
             <div className="row">
             <Cards page="/" results={results}/>
             </div>
@@ -45,4 +46,4 @@ function Home() {
   );
 }
 
-export default Home
+export default App

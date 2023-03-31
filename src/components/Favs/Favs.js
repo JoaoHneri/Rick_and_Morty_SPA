@@ -19,14 +19,12 @@ const Fav = ({page}) => {
     display = data.map((x) => {
       let { id, name, image, species, location, status } = x;
       return (
-
-        
-        <div key={id} className={"col-4 mb-4 position-relative"}>
-          <div className={styles.cards}>
+        <div key={id} className={"col-lg-4 col-md-6 col-12 mb-4 position-relative text-dark"}>
+        <div className={`${styles.cards} d-flex flex-column justify-content-center`}>
           <Link to={`${id}`}> 
           <img src={image} alt="" className={`${styles.img} img-fluid`} />
           </Link>
-            <div className={`${styles.cardy_body} Card-body`}>
+            <div className={`${styles.cardy_body}`}>
               <div className="fs-4 fw-bold">{name}</div>
               <div className="fs-5 mb-4">{species}</div>
               <div className="mb-4">
@@ -55,7 +53,7 @@ const Fav = ({page}) => {
                 })()}
               </div>
               <div>
-                <p className={`${styles.heart}`} onClick={()=> removeItem(x)}><AiFillHeart/></p>
+                <p className={`${styles.heart} position-absolute badge`} onClick={()=> removeItem(x)}><AiFillHeart/></p>
               </div>
             </div>
           </div>
