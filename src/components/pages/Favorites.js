@@ -1,7 +1,7 @@
 import React from 'react'
-import Fav from '../components/Favs/Favs'
-import Navbar from '../components/Navbar/Navbar'
-import Social from '../components/Social/Social'
+import Fav from '../Favs/Favs'
+import Navbar from '../Navbar/Navbar'
+import Social from '../Social/Social'
 
 function Favorites() {
   return (

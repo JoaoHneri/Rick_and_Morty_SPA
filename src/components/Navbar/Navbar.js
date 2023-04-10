@@ -1,13 +1,17 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../../App.css";
+import Logo from '../../imagens/logo.png';
+import {GiHamburgerMenu} from 'react-icons/gi'
+import {VscListFilter} from 'react-icons/vsc'
+
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
       <div className="container">
         <Link to="/" className="navbar-brand fs-3">
-          Rick and Morty
+          <img src={Logo} className="img" alt="Logo"/>
         </Link>
         <style jsx>{`
           button[aria-expanded="false"] > .close {
@@ -26,8 +30,8 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="fas fa-bars open text-dark"></span>
-          <span class="fas fa-times close text-dark"></span>
+          <span class="fas fa-bars open text-dark"><GiHamburgerMenu/></span>
+          <span class="fas fa-times close text-dark"><VscListFilter/></span>
         </button>
         <div
           className="collapse navbar-collapse justify-content-end"

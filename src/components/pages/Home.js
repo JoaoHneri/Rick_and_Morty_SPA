@@ -1,11 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
-import Cards from "../components/Cards/Cards";
-import Social from "../components/Social/Social";
+import Cards from "../Cards/Cards";
+import Social from "../Social/Social";
 import { useEffect, useState } from "react";
-import Pagination from "../components/Pagination/Pagination";
-import Search from "../components/Search/Search";
-import Navbar from "../components/Navbar/Navbar";
+import Pagination from "../Pagination/Pagination";
+import Search from "../Search/Search";
+import Navbar from "../Navbar/Navbar";
 
 
 

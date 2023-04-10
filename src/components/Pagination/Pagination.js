@@ -10,6 +10,7 @@ const Pagination = ({Page, setPage, info}) => {
   };
 
   const [width, setWidth] = useState(window.innerWidth);
+  
   const updateDimensions = () => {
     setWidth(window.innerWidth);
   };

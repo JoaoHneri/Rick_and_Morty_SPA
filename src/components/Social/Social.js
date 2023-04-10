@@ -1,5 +1,7 @@
 import React from 'react'
 import Accordion from 'react-bootstrap/Accordion';
+import {BsInstagram} from 'react-icons/bs'
+import {AiOutlineLinkedin, AiFillGithub} from 'react-icons/ai'
 
 const Social = () => {
   return (
@@ -8,11 +10,12 @@ const Social = () => {
       <Accordion.Item eventKey="0">
         <Accordion.Header>Redes Sociais</Accordion.Header>
         <Accordion.Body>
-          <a href="http://www.instagram.com/joaoneri.00" id="redirect" target="_blank" rel='noreferrer'>Insta: joaoneri.00</a>
+          
+        <a href="http://www.instagram.com/joaoneri.00" className='text-decoration-none text-dark' id="redirect" target="_blank" rel='noreferrer'> <h5><BsInstagram/>Instagram</h5></a>
           <br/>
-          <a  href="http://www.linkedin.com/joao-henrique-neri" id="redirect" target="_blank" rel='noreferrer'>Linkedin: João Henrique Neri</a>
+          <a href="https://www.linkedin.com/in/joão-henrique-neri" className='text-decoration-none text-dark' id="redirect" target="_blank" rel='noreferrer'> <h5><AiOutlineLinkedin/>Linkedin</h5></a>
           <br/>
-          <a href="http://www.github.com/joaohneri" id="redirect" target="_blank" rel='noreferrer'>Github: /JoaoHneri</a>
+          <a href="https://github.com/JoaoHneri" className='text-decoration-none text-dark' id="redirect" target="_blank" rel='noreferrer'> <h5><AiFillGithub/>GitHub</h5></a>
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
